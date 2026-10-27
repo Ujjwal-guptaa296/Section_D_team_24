@@ -2,7 +2,7 @@
 % Compile on Overleaf (https://www.overleaf.com) for best results
 % Select "pdfLaTeX" compiler
 
-\documentclass[conference]{IEEEtran}
+\documentclass[12pt, a4paper]{article}
 
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
@@ -14,22 +14,26 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{float}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
 
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+% IEEE-style section formatting (Roman numerals, centered)
+\titleformat{\section}{\normalfont\Large\bfseries\centering}{\Roman{section}.}{0.5em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries\itshape}{\Alph{subsection}.}{0.5em}{}
 
 \begin{document}
 
-\title{Restoration and Enhancement of Degraded Historical Documents and Manuscripts Using Classical Image Processing and Computer Vision Techniques}
+\title{\LARGE Restoration and Enhancement of Degraded Historical Documents and Manuscripts Using Classical Image Processing and Computer Vision Techniques}
 
 \author{
-\IEEEauthorblockN{Student 1\IEEEauthorrefmark{1}, Student 2\IEEEauthorrefmark{2}, Student 3\IEEEauthorrefmark{3}, Student 4\IEEEauthorrefmark{4}}
-\IEEEauthorblockA{
-Department of Computer Science and Engineering\\
-[University Name], [City], India\\
-\{student1, student2, student3, student4\}@university.edu
+Student 1*, Student 2, Student 3, Student 4 \\
+\textit{Department of Computer Science and Engineering} \\
+\textit{[University Name], [City], India} \\
+\texttt{\{student1, student2, student3, student4\}@university.edu}
 }
-}
+
+\date{October 2026}
 
 \maketitle
 
@@ -44,9 +48,9 @@ In this work, we propose and implement an end-to-end, high-performance, eight-st
 The system is rigorously benchmarked against both authentic historical manuscripts (Codex Gigas, Gutenberg Bible, Magna Carta, US Constitution) and synthetically degraded documents. Performance is evaluated quantitatively using Peak Signal-to-Noise Ratio (PSNR) and Structural Similarity Index (SSIM). The entire architecture is integrated into a modern Streamlit web application featuring real-time stage inspection, interactive comparison sliders, and algorithmic ablation testing. Experimental results confirm that the proposed system substantially restores contrast and stroke continuity while eliminating background interference, executing on standard multi-core CPUs in sub-second runtimes.
 \end{abstract}
 
-\begin{IEEEkeywords}
-Document Restoration, Historical Manuscripts, Sauvola Binarization, Morphological Background Division, CLAHE, Digital Inpainting, Computer Vision, Streamlit.
-\end{IEEEkeywords}
+\vspace{0.5em}
+\noindent\textbf{Keywords}---Document Restoration, Historical Manuscripts, Sauvola Binarization, Morphological Background Division, CLAHE, Digital Inpainting, Computer Vision, Streamlit.
+\vspace{1em}
 
 % ====================================================================
 % I. INTRODUCTION

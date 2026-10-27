@@ -40,9 +40,9 @@ def add_ieee_heading(doc, text, level=1):
         run.font.name = 'Times New Roman'
         run.font.color.rgb = RGBColor(0, 0, 0)
         if level == 1:
-            run.font.size = Pt(12)
+            run.font.size = Pt(14)
         elif level == 2:
-            run.font.size = Pt(10)
+            run.font.size = Pt(12)
             run.italic = True
     h.paragraph_format.space_before = Pt(10)
     h.paragraph_format.space_after = Pt(4)
@@ -61,11 +61,11 @@ def add_body(doc, text, bold_prefix=None, italic=False):
     if bold_prefix:
         r = p.add_run(bold_prefix)
         r.font.name = 'Times New Roman'
-        r.font.size = Pt(10)
+        r.font.size = Pt(12)
         r.bold = True
     r = p.add_run(text)
     r.font.name = 'Times New Roman'
-    r.font.size = Pt(10)
+    r.font.size = Pt(12)
     r.italic = italic
     return p
 
@@ -78,7 +78,7 @@ def add_equation(doc, text):
     p.paragraph_format.space_after = Pt(4)
     r = p.add_run(text)
     r.font.name = 'Times New Roman'
-    r.font.size = Pt(10)
+    r.font.size = Pt(12)
     r.italic = True
     return p
 
@@ -86,21 +86,21 @@ def add_equation(doc, text):
 def create_ieee_report():
     doc = Document()
 
-    # Page Setup (US Letter, IEEE margins: 0.75" top/bottom, 0.625" sides)
+    # Page Setup (A4, normal 1-inch margins, single column)
     for section in doc.sections:
-        section.page_width = Inches(8.5)
-        section.page_height = Inches(11)
-        section.top_margin = Inches(0.75)
-        section.bottom_margin = Inches(0.75)
-        section.left_margin = Inches(0.625)
-        section.right_margin = Inches(0.625)
+        section.page_width = Inches(8.27)   # A4 width
+        section.page_height = Inches(11.69) # A4 height
+        section.top_margin = Inches(1.0)
+        section.bottom_margin = Inches(1.0)
+        section.left_margin = Inches(1.0)
+        section.right_margin = Inches(1.0)
 
     # Base Style
     style = doc.styles['Normal']
     style.font.name = 'Times New Roman'
-    style.font.size = Pt(10)
-    style.paragraph_format.line_spacing = 1.0
-    style.paragraph_format.space_after = Pt(2)
+    style.font.size = Pt(12)
+    style.paragraph_format.line_spacing = 1.15
+    style.paragraph_format.space_after = Pt(4)
 
     # ==========================================
     # TITLE
@@ -183,7 +183,7 @@ def create_ieee_report():
         "the proposed system substantially restores contrast and stroke continuity while eliminating background interference."
     )
     r_abs.font.name = 'Times New Roman'
-    r_abs.font.size = Pt(9)
+    r_abs.font.size = Pt(11)
     r_abs.italic = True
 
     p_kw = doc.add_paragraph()
@@ -193,7 +193,7 @@ def create_ieee_report():
     p_kw.paragraph_format.space_after = Pt(8)
     r_kwt = p_kw.add_run("Keywords—")
     r_kwt.font.name = 'Times New Roman'
-    r_kwt.font.size = Pt(9)
+    r_kwt.font.size = Pt(11)
     r_kwt.bold = True
     r_kwt.italic = True
     r_kwb = p_kw.add_run(
@@ -201,7 +201,7 @@ def create_ieee_report():
         "CLAHE, Digital Inpainting, Computer Vision, Streamlit."
     )
     r_kwb.font.name = 'Times New Roman'
-    r_kwb.font.size = Pt(9)
+    r_kwb.font.size = Pt(11)
     r_kwb.italic = True
 
     # ==========================================
@@ -418,7 +418,7 @@ def create_ieee_report():
         for r in p.runs:
             r.font.bold = True
             r.font.color.rgb = RGBColor(255, 255, 255)
-            r.font.size = Pt(8)
+            r.font.size = Pt(10)
             r.font.name = 'Times New Roman'
 
     data1 = [
@@ -438,7 +438,7 @@ def create_ieee_report():
             p = cell.paragraphs[0]
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             for r in p.runs:
-                r.font.size = Pt(8)
+                r.font.size = Pt(10)
                 r.font.name = 'Times New Roman'
 
     add_body(doc,
@@ -486,7 +486,7 @@ def create_ieee_report():
         for r in p.runs:
             r.font.bold = True
             r.font.color.rgb = RGBColor(255, 255, 255)
-            r.font.size = Pt(8)
+            r.font.size = Pt(10)
             r.font.name = 'Times New Roman'
 
     data2 = [
@@ -506,7 +506,7 @@ def create_ieee_report():
             p = cell.paragraphs[0]
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             for r in p.runs:
-                r.font.size = Pt(8)
+                r.font.size = Pt(10)
                 r.font.name = 'Times New Roman'
                 if ri == 5:
                     r.bold = True
@@ -591,7 +591,7 @@ def create_ieee_report():
         p_ref.paragraph_format.space_after = Pt(2)
         r = p_ref.add_run(ref)
         r.font.name = 'Times New Roman'
-        r.font.size = Pt(8)
+        r.font.size = Pt(10)
 
     # SAVE
     output_file = "Document_Restoration_IEEE_Report.docx"
