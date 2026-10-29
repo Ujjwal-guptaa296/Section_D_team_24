@@ -10,5 +10,5 @@
 
 ### 🚀 Standalone Test:
 ```bash
-python -c "import cv2; from modules.member1_preprocessing import crop_document_borders; print('Member 1 module functional')"
+python -c "import cv2; from modules.preprocessing import crop_document_borders; print('Preprocessing module functional')"
 ```

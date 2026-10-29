@@ -9,5 +9,5 @@
 
 ### 🚀 Standalone Test:
 ```bash
-python -c "import cv2; from modules.member2_filtering_inpainting import denoise_document; print('Member 2 module functional')"
+python -c "import cv2; from modules.filtering_inpainting import denoise_document; print('Filtering & inpainting module functional')"
 ```

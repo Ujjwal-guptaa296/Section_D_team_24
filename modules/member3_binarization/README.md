@@ -9,5 +9,5 @@
 
 ### 🚀 Standalone Test:
 ```bash
-python -c "import cv2; from modules.member3_binarization import sauvola_binarize; print('Member 3 module functional')"
+python -c "import cv2; from modules.binarization import sauvola_binarize; print('Binarization module functional')"
 ```

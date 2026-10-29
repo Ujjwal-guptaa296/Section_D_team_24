@@ -10,5 +10,5 @@
 
 ### 🚀 Standalone Test:
 ```bash
-python -c "import numpy as np; from modules.member4_ui_evaluation import compute_psnr; print('Member 4 module functional')"
+python -c "import numpy as np; from modules.ui_evaluation import compute_psnr; print('UI & evaluation module functional')"
 ```
